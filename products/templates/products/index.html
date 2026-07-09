@@ -1,0 +1,155 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Django store</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Hello world</h1>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Твой CSS -->
+    <link rel="stylesheet" href="{% static 'products/css/style.css' %}">
+</head>
+<body>
+
+    <!-- ==================== ШАПКА ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-code me-2"></i>MyDjango
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Услуги</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== БАННЕР ==================== -->
+    <section class="banner">
+        <div class="container">
+            <div class="row align-items-center" style="min-height: 60vh;">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold">Добро пожаловать!</h1>
+                    <p class="lead">Современное веб-приложение на Django.</p>
+                    <p class="mb-4">Быстро, надёжно, стильно.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5">
+                        <i class="fas fa-rocket me-2"></i>Начать
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center d-none d-lg-block">
+                    <i class="fas fa-laptop-code" style="font-size: 10rem; color: rgba(255,255,255,0.1);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== КАРТОЧКИ ==================== -->
+    <section class="features py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Наши преимущества</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-circle mx-auto mb-3">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Быстро</h5>
+                            <p class="card-text text-secondary">Мгновенная обработка данных</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-circle mx-auto mb-3">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Надёжно</h5>
+                            <p class="card-text text-secondary">Работает 24/7 без сбоев</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm">
+                        <div class="card-body">
+                            <div class="icon-circle mx-auto mb-3">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Красиво</h5>
+                            <p class="card-text text-secondary">Современный и чистый дизайн</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ПОДВАЛ ==================== -->
+    <footer class="footer bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>О нас</h5>
+                    <p class="text-secondary">Мы создаём современные веб-приложения на Django.</p>
+                    <div>
+                        <a href="#" class="text-white me-3"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <h5>Меню</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-secondary text-decoration-none">Главная</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">О нас</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Услуги</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li><i class="fas fa-map-marker-alt me-2 text-primary"></i>г. Москва, ул. Тверская 1</li>
+                        <li><i class="fas fa-phone me-2 text-primary"></i>+7 (999) 123-45-67</li>
+                        <li><i class="fas fa-envelope me-2 text-primary"></i>info@mydjango.ru</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-secondary">
+                <p class="mb-0">&copy; 2026 MyDjango. Сделано с ❤️ на Django</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+

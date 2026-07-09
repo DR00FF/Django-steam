@@ -1,0 +1,147 @@
+/* ============================================================
+   ОБЩИЕ СТИЛИ
+   ============================================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #2d3436;
+}
+
+/* ============================================================
+   БАННЕР
+   ============================================================ */
+.banner {
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    padding: 80px 0;
+    color: #ffffff;
+}
+
+.banner h1 {
+    color: #ffffff;
+}
+
+.banner .lead {
+    color: #dfe6e9;
+    font-size: 1.3rem;
+}
+
+.banner p {
+    color: #b2bec3;
+}
+
+.banner .btn-primary {
+    background: #0984e3;
+    border: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.banner .btn-primary:hover {
+    background: #0873c7;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(9, 132, 227, 0.3);
+}
+
+/* ============================================================
+   КАРТОЧКИ
+   ============================================================ */
+.features {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.features h2 {
+    color: #2d3436;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s;
+    background: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card .card-title {
+    color: #2d3436;
+}
+
+.card .card-text {
+    color: #636e72;
+}
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+.footer {
+    background: #2d3436 !important;
+    padding: 40px 0 20px;
+}
+
+.footer h5 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer .text-secondary {
+    color: #b2bec3 !important;
+}
+
+.footer a.text-secondary:hover {
+    color: #ffffff !important;
+}
+
+.footer .text-primary {
+    color: #0984e3 !important;
+}
+
+.footer hr {
+    opacity: 0.1;
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+@media (max-width: 768px) {
+    .banner {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .features {
+        padding: 50px 0;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
