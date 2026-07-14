@@ -1,147 +1,188 @@
-/* ============================================================
-   ОБЩИЕ СТИЛИ
-   ============================================================ */
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f6fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1622;
+    color: #c7d5e0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: #2d3436;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* ============================================================
-   БАННЕР
-   ============================================================ */
-.banner {
-    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
-    padding: 80px 0;
-    color: #ffffff;
+/* ----- ГЕРОЙ ----- */
+.hero {
+    background: linear-gradient(135deg, #0b1622 0%, #1b2a3a 100%);
+    padding: 100px 0 80px;
+    text-align: center;
+    border-bottom: 2px solid #2a3a4a;
+}
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -2px;
+}
+.hero-content h1 span {
+    color: #66c0f4;
+}
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: #8fa8b8;
+    margin: 20px 0 40px;
+}
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+}
+.stat-label {
+    font-size: 1rem;
+    color: #6b7f8f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.banner h1 {
-    color: #ffffff;
-}
-
-.banner .lead {
-    color: #dfe6e9;
-    font-size: 1.3rem;
-}
-
-.banner p {
-    color: #b2bec3;
-}
-
-.banner .btn-primary {
-    background: #0984e3;
-    border: none;
-    padding: 15px 40px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.banner .btn-primary:hover {
-    background: #0873c7;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(9, 132, 227, 0.3);
-}
-
-/* ============================================================
-   КАРТОЧКИ
-   ============================================================ */
+/* ----- ПРЕИМУЩЕСТВА (ПЛАШКИ) ----- */
 .features {
-    background: #ffffff;
-    padding: 80px 0;
+    padding: 70px 0;
+    background: #0f1c2e;
 }
-
 .features h2 {
-    color: #2d3436;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 50px;
 }
-
-.icon-circle {
-    width: 80px;
-    height: 80px;
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+.feature-card {
+    background: #1b2838;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.feature-icon {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    background: #2a3a4a;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 20px;
     font-size: 2rem;
-    color: #ffffff;
+    color: #66c0f4;
+}
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    color: #8fa8b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.card {
-    border: none;
-    border-radius: 15px;
-    transition: all 0.3s;
-    background: #ffffff;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
-}
-
-.card .card-title {
-    color: #2d3436;
-}
-
-.card .card-text {
-    color: #636e72;
-}
-
-/* ============================================================
-   ПОДВАЛ
-   ============================================================ */
+/* ----- ПОДВАЛ ----- */
 .footer {
-    background: #2d3436 !important;
-    padding: 40px 0 20px;
+    background: #0b1622;
+    border-top: 2px solid #1b2838;
+    padding: 30px 0;
+    margin-top: auto;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+.footer-logo span {
+    color: #66c0f4;
+}
+.footer-copy {
+    color: #6b7f8f;
+    font-size: 0.9rem;
+}
+.footer-social a {
+    color: #6b7f8f;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+.footer-social a:hover {
+    color: #66c0f4;
 }
 
-.footer h5 {
-    color: #ffffff;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.footer .text-secondary {
-    color: #b2bec3 !important;
-}
-
-.footer a.text-secondary:hover {
-    color: #ffffff !important;
-}
-
-.footer .text-primary {
-    color: #0984e3 !important;
-}
-
-.footer hr {
-    opacity: 0.1;
-}
-
-/* ============================================================
-   АДАПТИВНОСТЬ
-   ============================================================ */
+/* Адаптив */
 @media (max-width: 768px) {
-    .banner {
+    .hero {
+        padding: 60px 0 50px;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-stats {
+        gap: 30px;
+    }
+    .stat-number {
+        font-size: 2rem;
+    }
+    .features h2 {
+        font-size: 2rem;
+    }
+    .footer-content {
+        flex-direction: column;
         text-align: center;
-        padding: 50px 0;
     }
-
-    .banner h1 {
-        font-size: 2.5rem;
+    .footer-social a {
+        margin: 0 10px;
     }
-
-    .features {
-        padding: 50px 0;
+}
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
     }
-
-    .card {
-        margin-bottom: 20px;
+    .hero-content .subtitle {
+        font-size: 1.2rem;
     }
-
-    .footer {
-        text-align: center;
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 }
