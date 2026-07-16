@@ -1,86 +1,62 @@
+{% extends "products/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore — главная</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/stile.css' %}">
-</head>
-<body>
 
-    <!-- ===== ГЕРОЙ ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Game<span>Store</span></h1>
-                <p class="subtitle">Крупнейший магазин цифровых игр</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">8 000+</span>
-                        <span class="stat-label">игр</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">300+</span>
-                        <span class="stat-label">издателей</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4.8</span>
-                        <span class="stat-label">средний рейтинг</span>
-                    </div>
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== ГЕРОЙ ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Game<span>Store</span></h1>
+            <p class="subtitle">Крупнейший магазин цифровых игр</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">8 000+</span>
+                    <span class="stat-label">игр</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">издателей</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.8</span>
+                    <span class="stat-label">средний рейтинг</span>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ===== ПРЕИМУЩЕСТВА (плашки) ===== -->
-    <section class="features">
-        <div class="container">
-            <h2>Почему выбирают GameStore</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Мгновенная доставка</h3>
-                    <p>Цифровые ключи приходят на почту за секунды после оплаты</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Безопасные платежи</h3>
-                    <p>Все транзакции защищены современными протоколами шифрования</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-gift"></i></div>
-                    <h3>Еженедельные скидки</h3>
-                    <p>Новые акции и распродажи каждую неделю для всех пользователей</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
-                    <h3>Поддержка 24/7</h3>
-                    <p>Наши операторы всегда готовы помочь с любым вопросом</p>
-                </div>
+    </div>
+</section>
+<!-- ===== ПРЕИМУЩЕСТВА (плашки) ===== -->
+<section class="features">
+    <div class="container">
+        <h2>Почему выбирают GameStore</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Мгновенная доставка</h3>
+                <p>Цифровые ключи приходят на почту за секунды после оплаты</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Безопасные платежи</h3>
+                <p>Все транзакции защищены современными протоколами шифрования</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                <h3>Еженедельные скидки</h3>
+                <p>Новые акции и распродажи каждую неделю для всех пользователей</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>Поддержка 24/7</h3>
+                <p>Наши операторы всегда готовы помочь с любым вопросом</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ===== ПОДВАЛ ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Game<span>Store</span></div>
-                <p class="footer-copy">© 2026 GameStore. Все права защищены.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-vk"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-
-
+{% endblock %}

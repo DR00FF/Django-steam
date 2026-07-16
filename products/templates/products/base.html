@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore — главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %} {% endblock %}
+</head>
+<body>
+
+ <!-- ========== ШАПКА ========== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Game<span>Store</span></span>
+                </div>
+                <nav class="nav">
+                    <a href="{% url 'home' %}">Главная</a>
+                    <a href="{% url 'catalog' %}">Каталог</a>
+                    <a href="#">Библиотека</a>
+                    <a href="#">О нас</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search">
+                        <input type="text" placeholder="Поиск...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Войти</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Game<span>Store</span></div>
+                <p class="footer-copy">© 2026 GameStore. Все права защищены.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+

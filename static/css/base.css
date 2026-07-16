@@ -1,0 +1,131 @@
+/* ========== ШАПКА ========== */
+.header {
+    background: #171d25;
+    border-bottom: 2px solid #2a3a4a;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+.logo i {
+    color: #66c0f4;
+    font-size: 1.8rem;
+}
+.logo span {
+    color: #66c0f4;
+}
+.nav {
+    display: flex;
+    gap: 28px;
+}
+.nav a {
+    color: #c7d5e0;
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s;
+}
+.nav a:hover {
+    color: #fff;
+}
+.nav a.active {
+    color: #fff;
+    border-bottom-color: #66c0f4;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.search {
+    display: flex;
+    background: #2a3a4a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.search input {
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    color: #c7d5e0;
+    width: 180px;
+    outline: none;
+}
+.search input::placeholder {
+    color: #6b7f8f;
+}
+.search button {
+    background: transparent;
+    border: none;
+    color: #8fa8b8;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+.search button:hover {
+    color: #fff;
+}
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c7d5e0;
+    cursor: pointer;
+}
+.user i {
+    font-size: 1.6rem;
+    color: #66c0f4;
+}
+.user:hover {
+    color: #fff;
+}
+/* ========== ПОДВАЛ ========== */
+.footer {
+    background: #0b1622;
+    border-top: 2px solid #1b2838;
+    padding: 30px 0;
+    margin-top: auto;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+.footer-logo span {
+    color: #66c0f4;
+}
+.footer-copy {
+    color: #6b7f8f;
+    font-size: 0.9rem;
+}
+.footer-social a {
+    color: #6b7f8f;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+.footer-social a:hover {
+    color: #66c0f4;
+}

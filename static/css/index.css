@@ -1,4 +1,4 @@
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+/* ========== ОБЩИЕ ========== */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,8 @@ body {
     padding: 0 20px;
 }
 
-/* ----- ГЕРОЙ ----- */
+
+/* ========== ГЕРОЙ ========== */
 .hero {
     background: linear-gradient(135deg, #0b1622 0%, #1b2a3a 100%);
     padding: 100px 0 80px;
@@ -63,7 +64,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ----- ПРЕИМУЩЕСТВА (ПЛАШКИ) ----- */
+/* ========== ПРЕИМУЩЕСТВА ========== */
 .features {
     padding: 70px 0;
     background: #0f1c2e;
@@ -114,44 +115,25 @@ body {
     font-size: 0.95rem;
 }
 
-/* ----- ПОДВАЛ ----- */
-.footer {
-    background: #0b1622;
-    border-top: 2px solid #1b2838;
-    padding: 30px 0;
-    margin-top: auto;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.footer-logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #fff;
-}
-.footer-logo span {
-    color: #66c0f4;
-}
-.footer-copy {
-    color: #6b7f8f;
-    font-size: 0.9rem;
-}
-.footer-social a {
-    color: #6b7f8f;
-    font-size: 1.4rem;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
-.footer-social a:hover {
-    color: #66c0f4;
-}
 
-/* Адаптив */
+/* ========== АДАПТИВ ========== */
 @media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .nav {
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .header-actions {
+        justify-content: space-between;
+    }
+    .search input {
+        width: 120px;
+    }
     .hero {
         padding: 60px 0 50px;
     }
@@ -184,5 +166,8 @@ body {
     }
     .features-grid {
         grid-template-columns: 1fr;
+    }
+    .search input {
+        width: 80px;
     }
 }
