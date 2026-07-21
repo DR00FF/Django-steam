@@ -26,9 +26,10 @@ from django.urls import path
 
 from django.contrib import admin
 from django.urls import path, include
-from products.views import index, catalog
+from products.views import index, catalog, about
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),
-    path('products', catalog, name='catalog')
+    path('products', catalog, name='catalog'),
+    path('about_us', about, name='about')
 ]

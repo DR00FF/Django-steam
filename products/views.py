@@ -7,3 +7,6 @@ def index(request):
 # Каталог игр (с фильтром)
 def catalog(request):
     return render(request, 'products/catalog.html')
+
+def about(request):
+    return render(request, 'products/about_us.html')

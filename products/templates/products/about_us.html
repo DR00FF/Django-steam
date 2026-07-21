@@ -1,0 +1,111 @@
+
+{% extends "products/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+{% endblock %}
+
+{% block content %}
+ <!-- ========== БЛОК "НАША ИСТОРИЯ" ========== -->
+    <section class="about-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-text">
+                    <h2>Наша история</h2>
+                    <p>
+                        GameStore был основан в 2020 году группой геймеров, которые хотели
+                        создать идеальный магазин цифровых игр. Мы начали с малого —
+                        всего 50 игр в каталоге и команды из 3 человек.
+                    </p>
+                    <p>
+                        Сегодня в нашем каталоге более 8 000 игр, а команда выросла до 50
+                        профессионалов. Мы гордимся тем, что помогаем игрокам по всему миру
+                        находить свои любимые игры по лучшим ценам.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <i class="fas fa-flag"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== БЛОК "НАША КОМАНДА" ========== -->
+    <section class="about-team">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
+                    <h3>Алексей Иванов</h3>
+                    <p class="team-role">Основатель и CEO</p>
+                    <p class="team-desc">20 лет в геймдеве. Мечтает создать идеальный игровой сервис.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Мария Петрова</h3>
+                    <p class="team-role">Технический директор</p>
+                    <p class="team-desc">Эксперт в Django и высоконагруженных системах.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+                    <h3>Дмитрий Смирнов</h3>
+                    <p class="team-role">Дизайнер интерфейсов</p>
+                    <p class="team-desc">Создаёт красоту, в которую влюбляются пользователи.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== БЛОК "НАШИ ЦЕННОСТИ" ========== -->
+    <section class="about-values">
+        <div class="container">
+            <h2>Наши ценности</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Любовь к играм</h3>
+                    <p>Мы сами геймеры и понимаем, что нужно игрокам</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Честность</h3>
+                    <p>Прозрачные цены и никаких скрытых платежей</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Инновации</h3>
+                    <p>Постоянно внедряем новые технологии и идеи</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Сообщество</h3>
+                    <p>Создаём пространство для общения геймеров</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== БЛОК "КОНТАКТЫ" ========== -->
+    <section class="about-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Свяжитесь с нами</h2>
+                    <p><i class="fas fa-envelope"></i> info@gamestore.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Тверская 1</p>
+                    <div class="contact-social">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <i class="fas fa-map"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

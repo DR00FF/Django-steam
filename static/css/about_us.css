@@ -1,0 +1,449 @@
+/* ========== СТИЛИ ДЛЯ СТРАНИЦЫ "О НАС" ========== */
+
+/* ---------- ОБЩИЕ ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1622;
+    color: #c7d5e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- ШАПКА (копия из style.css) ---------- */
+.header {
+    background: #171d25;
+    border-bottom: 2px solid #2a3a4a;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+.logo i {
+    color: #66c0f4;
+    font-size: 1.8rem;
+}
+.logo span {
+    color: #66c0f4;
+}
+.nav {
+    display: flex;
+    gap: 28px;
+}
+.nav a {
+    color: #c7d5e0;
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s;
+}
+.nav a:hover {
+    color: #fff;
+}
+.nav a.active {
+    color: #fff;
+    border-bottom-color: #66c0f4;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.search {
+    display: flex;
+    background: #2a3a4a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.search input {
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    color: #c7d5e0;
+    width: 180px;
+    outline: none;
+}
+.search input::placeholder {
+    color: #6b7f8f;
+}
+.search button {
+    background: transparent;
+    border: none;
+    color: #8fa8b8;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+.search button:hover {
+    color: #fff;
+}
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c7d5e0;
+    cursor: pointer;
+}
+.user i {
+    font-size: 1.6rem;
+    color: #66c0f4;
+}
+.user:hover {
+    color: #fff;
+}
+
+/* ---------- ГЕРОЙ "О НАС" ---------- */
+.about-hero {
+    background: linear-gradient(135deg, #0b1622 0%, #1b2a3a 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 2px solid #2a3a4a;
+}
+.about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+}
+.about-hero p {
+    font-size: 1.3rem;
+    color: #8fa8b8;
+    margin-top: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- НАША ИСТОРИЯ ---------- */
+.about-story {
+    padding: 80px 0;
+    background: #0f1c2e;
+}
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.story-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.story-text p {
+    color: #8fa8b8;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+}
+.story-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    color: rgba(255,255,255,0.05);
+    background: #1b2838;
+    border-radius: 20px;
+    padding: 60px 0;
+    transition: all 0.3s;
+}
+.story-image:hover {
+    background: #2a3a4a;
+    color: rgba(255,255,255,0.08);
+}
+
+/* ---------- КОМАНДА ---------- */
+.about-team {
+    padding: 80px 0;
+    background: #0b1622;
+}
+.about-team h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.team-card {
+    background: #1b2838;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.team-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #2a3a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 3rem;
+    color: #66c0f4;
+}
+.team-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.team-role {
+    color: #66c0f4;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+.team-desc {
+    color: #8fa8b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ---------- ЦЕННОСТИ ---------- */
+.about-values {
+    padding: 80px 0;
+    background: #0f1c2e;
+}
+.about-values h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+.value-card {
+    background: #1b2838;
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.value-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #2a3a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: #66c0f4;
+}
+.value-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.value-card p {
+    color: #8fa8b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ---------- КОНТАКТЫ ---------- */
+.about-contact {
+    padding: 80px 0;
+    background: #0b1622;
+    border-top: 2px solid #2a3a4a;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.contact-info p {
+    color: #8fa8b8;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.contact-info p i {
+    color: #66c0f4;
+    width: 24px;
+}
+.contact-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+.contact-social a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1b2838;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7f8f;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+}
+.contact-social a:hover {
+    background: #66c0f4;
+    color: #171d25;
+    transform: translateY(-4px);
+}
+.contact-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12rem;
+    color: rgba(255,255,255,0.03);
+    background: #1b2838;
+    border-radius: 20px;
+    padding: 60px 0;
+    transition: all 0.3s;
+}
+.contact-map:hover {
+    background: #2a3a4a;
+    color: rgba(255,255,255,0.06);
+}
+
+/* ---------- ПОДВАЛ ---------- */
+.footer {
+    background: #0b1622;
+    border-top: 2px solid #1b2838;
+    padding: 30px 0;
+    margin-top: auto;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+.footer-logo span {
+    color: #66c0f4;
+}
+.footer-copy {
+    color: #6b7f8f;
+    font-size: 0.9rem;
+}
+.footer-social a {
+    color: #6b7f8f;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+.footer-social a:hover {
+    color: #66c0f4;
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .nav {
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .header-actions {
+        justify-content: space-between;
+    }
+    .search input {
+        width: 120px;
+    }
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    .story-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-info p {
+        justify-content: center;
+    }
+    .contact-social {
+        justify-content: center;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    .search input {
+        width: 80px;
+    }
+}
