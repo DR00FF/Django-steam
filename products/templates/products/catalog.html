@@ -19,9 +19,9 @@
     <!-- ========== СЕТКА ИГР ========== -->
     <section class="catalog-grid">
         <div class="container">
-            {% for product in products %}
             <div class="games-grid">
                 <!-- Карточка 1 -->
+                {% for product in products %}
                 <div class="game-card">
                     <div class="game-image" style="background: #1a1a2e;">
                         {% if product.image %}
@@ -42,9 +42,10 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+
     </section>
 {% endblock %}
 

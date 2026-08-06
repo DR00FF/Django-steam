@@ -1,0 +1,117 @@
+[
+{
+  "model": "products.gamecategory",
+  "pk": 1,
+  "fields": {
+    "name": "Шутер",
+    "description": ""
+  }
+},
+{
+  "model": "products.gamecategory",
+  "pk": 2,
+  "fields": {
+    "name": "Ужасы",
+    "description": ""
+  }
+},
+{
+  "model": "products.gamecategory",
+  "pk": 3,
+  "fields": {
+    "name": "Приключение",
+    "description": ""
+  }
+},
+{
+  "model": "products.gamecategory",
+  "pk": 4,
+  "fields": {
+    "name": "Collectible Card Game",
+    "description": ""
+  }
+},
+{
+  "model": "products.gamecategory",
+  "pk": 5,
+  "fields": {
+    "name": "Симуляторы",
+    "description": ""
+  }
+},
+{
+  "model": "products.game",
+  "pk": 1,
+  "fields": {
+    "name": "Warface",
+    "image": "products_media/RU_nMzNqtj.jpg",
+    "description": "",
+    "short_description": "",
+    "price": "799.00",
+    "quantity": 1,
+    "genre": "Экшэн",
+    "category": 1,
+    "rating": 7.7
+  }
+},
+{
+  "model": "products.game",
+  "pk": 2,
+  "fields": {
+    "name": "OUTLAST",
+    "image": "products_media/LTyC8jEO_mgEbhYk.jpg",
+    "description": "",
+    "short_description": "",
+    "price": "499.00",
+    "quantity": 1,
+    "genre": "Survival horror",
+    "category": 2,
+    "rating": 6.3
+  }
+},
+{
+  "model": "products.game",
+  "pk": 3,
+  "fields": {
+    "name": "Genshin Imapct",
+    "image": "products_media/i_2.webp",
+    "description": "",
+    "short_description": "",
+    "price": "1199.00",
+    "quantity": 1,
+    "genre": "Adventure",
+    "category": 3,
+    "rating": 8.1
+  }
+},
+{
+  "model": "products.game",
+  "pk": 4,
+  "fields": {
+    "name": "Hearthstone",
+    "image": "products_media/default-475d770302527dbab7708dca2af05afd_HtQSQHu.jpg",
+    "description": "",
+    "short_description": "",
+    "price": "399.00",
+    "quantity": 1,
+    "genre": "Стратегия",
+    "category": 4,
+    "rating": 7.5
+  }
+},
+{
+  "model": "products.game",
+  "pk": 5,
+  "fields": {
+    "name": "Subnautica",
+    "image": "products_media/orig_gPjdGxu.webp",
+    "description": "",
+    "short_description": "",
+    "price": "1499.00",
+    "quantity": 1,
+    "genre": "Simulation",
+    "category": 5,
+    "rating": 8.9
+  }
+}
+]

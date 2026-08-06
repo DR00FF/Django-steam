@@ -17,7 +17,7 @@ class Game(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     genre = models.CharField(max_length=32, blank=True)
     category = models.ForeignKey(GameCategory, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField(default=0)
+    rating = models.FloatField(default=0)
 
     def __str__(self):
         return f"{self.name} | {self.category.name}"
