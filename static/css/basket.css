@@ -1,0 +1,242 @@
+/* ============================================================
+   basket.css — СТИЛЬ ДЛЯ КОРЗИНЫ
+   ============================================================ */
+
+.basket-page {
+    padding: 40px 0 60px;
+    background: #0b1622;
+    min-height: 70vh;
+}
+
+.basket-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* ---------- ТАБЛИЦА ---------- */
+.basket-table-wrapper {
+    overflow-x: auto;
+}
+
+.basket-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1b2838;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.basket-table thead {
+    background: #2a3a4a;
+}
+
+.basket-table th {
+    padding: 16px 20px;
+    text-align: left;
+    color: #8fa8b8;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.basket-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #2a3a4a;
+    color: #c7d5e0;
+}
+
+.basket-table tr:last-child td {
+    border-bottom: none;
+}
+
+.basket-table tr:hover {
+    background: #243545;
+}
+
+/* ----- Информация об игре ----- */
+.basket-game-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.basket-game-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: #2a3a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #66c0f4;
+    flex-shrink: 0;
+}
+
+.basket-game-name {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ----- Количество ----- */
+.basket-quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.basket-qty-number {
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ----- Цены ----- */
+.basket-price {
+    color: #c7d5e0;
+    font-weight: 500;
+}
+
+.basket-total-price {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ----- Удалить ----- */
+.basket-remove {
+    background: transparent;
+    border: none;
+    color: #6b7f8f;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px 8px;
+}
+
+.basket-remove:hover {
+    color: #e84a4a;
+}
+
+/* ---------- ИТОГО ---------- */
+.basket-summary {
+    max-width: 400px;
+    margin-left: auto;
+    margin-top: 30px;
+    background: #1b2838;
+    border-radius: 16px;
+    padding: 30px 40px;
+}
+
+.basket-summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #c7d5e0;
+    font-size: 1rem;
+}
+
+.basket-summary-row:last-of-type {
+    border-top: 1px solid #2a3a4a;
+    margin-top: 8px;
+    padding-top: 16px;
+}
+
+.basket-grand-total {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #66c0f4;
+}
+
+.basket-btn-checkout {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #66c0f4, #4a8db7);
+    border: none;
+    border-radius: 8px;
+    color: #171d25;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.basket-btn-checkout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(102, 192, 244, 0.3);
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 768px) {
+    .basket-title {
+        font-size: 2rem;
+    }
+
+    .basket-table th,
+    .basket-table td {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .basket-game-name {
+        font-size: 0.9rem;
+    }
+
+    .basket-game-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .basket-summary {
+        padding: 24px 20px;
+        max-width: 100%;
+    }
+
+    .basket-grand-total {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .basket-title {
+        font-size: 1.6rem;
+    }
+
+    .basket-table th,
+    .basket-table td {
+        padding: 10px 10px;
+        font-size: 0.8rem;
+    }
+
+    .basket-table td:last-child {
+        padding-right: 6px;
+    }
+
+    .basket-game-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .basket-game-name {
+        font-size: 0.8rem;
+    }
+
+    .basket-summary {
+        padding: 20px 16px;
+    }
+
+    .basket-btn-checkout {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}

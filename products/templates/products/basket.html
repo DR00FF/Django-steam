@@ -1,0 +1,91 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}Корзина — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/basket.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="cart-page">
+    <div class="container">
+
+        <h1 class="cart-title">Моя корзина</h1>
+
+        {% if basket %}
+            <div class="cart-table-wrapper">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Игра</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                            <th>Сумма</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cart-game-info">
+                                <div class="cart-game-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <span class="cart-game-name">CyberQuest 2077</span>
+                            </td>
+                            <td class="cart-price">1 299 ₽</td>
+                            <td>
+                                <div class="cart-quantity">
+                                    <span class="qty-number">1</span>
+                                </div>
+                            </td>
+                            <td class="cart-total-price">1 299 ₽</td>
+                            <td>
+                                <button class="cart-remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cart-game-info">
+                                <div class="cart-game-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <span class="cart-game-name">Dragon Age: Origins</span>
+                            </td>
+                            <td class="cart-price">1 799 ₽</td>
+                            <td>
+                                <div class="cart-quantity">
+                                    <span class="qty-number">2</span>
+                                </div>
+                            </td>
+                            <td class="cart-total-price">3 598 ₽</td>
+                            <td>
+                                <button class="cart-remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Товаров:</span>
+                    <span>2</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Общая сумма:</span>
+                    <span class="cart-grand-total">4 897 ₽</span>
+                </div>
+                <a href="#" class="btn-checkout">Оформить заказ</a>
+            </div>
+
+        {% else %}
+            <h4>Корзина пуста</h4>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
