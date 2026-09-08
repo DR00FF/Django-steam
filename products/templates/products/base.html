@@ -6,13 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title|title }}</title>
+
+    <!-- Шрифт Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block css %} {% endblock %}
+
+    {% block css %}{% endblock %}
 </head>
 <body>
 
- <!-- ========== ШАПКА ========== -->
+    <!-- ========== ШАПКА ========== -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
@@ -31,17 +38,32 @@
                         <input type="text" placeholder="Поиск...">
                         <button><i class="fas fa-search"></i></button>
                     </div>
-                    <div class="user">
-                        <i class="fas fa-user-circle"></i>
-                        <span>Войти</span>
+                {% if user.is_authenticated %}
+                    <div class="auth-buttons">
+                        <a href="{% url 'users:profile' %}" class="btn-profile">
+                            {{ user.username }}
+                            <i class="fas fa-user-circle"></i>
+                        </a>
                     </div>
+
+                    <div>
+                        <a href="{% url 'users:logout' %}" class="btn-login-header"> <i class="fas fa-sign-in-alt"></i><span>Выйти</span></a>
+                    </div>
+                {% else %}
+                    <a href="{% url 'users:login' %}" class="btn-login-header">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Войти</span>
+                    </a>
+                {% endif %}
                 </div>
             </div>
         </div>
     </header>
 
-    {% block content %} {% endblock %}
-    <!-- ===== ПОДВАЛ ===== -->
+    <!-- ========== КОНТЕНТ ========== -->
+    {% block content %}{% endblock %}
+
+    <!-- ========== ПОДВАЛ ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -59,6 +81,3 @@
 
 </body>
 </html>
-
-
-

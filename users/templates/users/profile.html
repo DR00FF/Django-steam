@@ -1,0 +1,102 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}Профиль — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-page">
+
+    <!-- ========================================================== -->
+    <!--  КРАСИВЫЙ ПЕРЕЛИВАЮЩИЙСЯ ФОН                                -->
+    <!-- ========================================================== -->
+    <div class="profile-header-bg">
+        <div class="profile-glow-bg"></div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!--  АВАТАР И ДАННЫЕ (поверх фона)                             -->
+    <!-- ========================================================== -->
+    <div class="profile-header-simple">
+        <div class="avatar-wrapper">
+            <div class="avatar">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <h1 class="username">Имя_пользователя</h1>
+        <p class="email">user@example.com</p>
+    </div>
+
+    <!-- ========================================================== -->
+    <!--  СТАТИСТИКА                                                -->
+    <!-- ========================================================== -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Игр в библиотеке</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Часов в играх</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Достижений</span>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!--  БИБЛИОТЕКА                                                -->
+    <!-- ========================================================== -->
+    <div class="library-container">
+        <h2 class="section-title">Моя библиотека</h2>
+        <div class="games-grid">
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="game-details">
+                    <h4>Название игры</h4>
+                    <p>0 ч.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="game-details">
+                    <h4>Название игры</h4>
+                    <p>0 ч.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="game-details">
+                    <h4>Название игры</h4>
+                    <p>0 ч.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="game-details">
+                    <h4>Название игры</h4>
+                    <p>0 ч.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

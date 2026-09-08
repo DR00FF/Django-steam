@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "products/base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-page">
+    {{ form.errors }}
+    <div class="login-box">
+
+        <h2 class="login-title">Вход в аккаунт</h2>
+
+        <form method="post" action="{% url 'users:login'%}" class="login-form">
+            {% csrf_token %}
+            <div class="login-group">
+                <label for="{{ form.usename.id_username }}">Имя пользователя</label>
+
+                {{ form.username }}
+            </div>
+
+            <div class="login-group">
+                <label for="{{ form.password.id_password }}">Пароль</label>
+
+                {{ form.password }}
+            </div>
+
+            {% if form.errors %}
+                <div class="login-errors">
+                    <p>Неверное имя пользователя или пароль.</p>
+                </div>
+            {% endif %}
+
+            <input type="submit" class="login-btn" value="Войти">
+        </form>
+
+        <p class="login-link">Нет аккаунта? <a href="{% url 'users:register' %}">Зарегистрируйтесь</a></p>
+    </div>
+</div>
+{% endblock %}

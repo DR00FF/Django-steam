@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "products/base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}Регистрация — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="register-page">
+    {{ form.errors }}
+    <div class="register-box">
+        <h2 class="register-title">Регистрация</h2>
+        <form method="post" action= "{% url 'users:register'%}" class="register-form">
+            {% csrf_token %}
+
+            <div class="register-group">
+                <label for="{{ form.username.id_username }}">Имя пользователя</label>
+
+                {{ form.username }}
+            </div>
+
+
+            <div class="register-group">
+                <label for="{{ form.email.id_email }}">Email</label>
+
+                {{ form.email }}
+            </div>
+
+            <div class="register-group">
+                <label for="{{ form.password1.id_password1}">Пароль</label>
+
+                {{ form.password1 }}
+            </div>
+
+            <div class="register-group">
+                <label for="{{ form.password2.id_password2 }}">Подтверждение пароля</label>
+
+                {{ form.password2 }}
+            </div>
+            <input type="submit" class="register-btn" value="Зарегистрироваться">
+        </form>
+
+        <p class="register-link">Уже есть аккаунт? <a href="{% url 'users:login' %}">Войдите</a></p>
+    </div>
+</div>
+{% endblock %}

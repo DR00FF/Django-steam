@@ -1,4 +1,36 @@
-/* ========== ШАПКА ========== */
+/* ============================================================
+   base.css — ГЛАВНЫЙ СТИЛЬ ДЛЯ ВСЕГО САЙТА
+   ============================================================ */
+
+/* ---------- ГЛОБАЛЬНЫЕ НАСТРОЙКИ ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    background: #0b1622;
+    color: #c7d5e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- ШАПКА ---------- */
 .header {
     background: #171d25;
     border-bottom: 2px solid #2a3a4a;
@@ -7,6 +39,7 @@
     top: 0;
     z-index: 100;
 }
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -14,6 +47,8 @@
     flex-wrap: wrap;
     gap: 16px;
 }
+
+/* ---------- ЛОГОТИП ---------- */
 .logo {
     display: flex;
     align-items: center;
@@ -21,44 +56,51 @@
     font-size: 1.6rem;
     font-weight: 800;
     color: #fff;
+    text-decoration: none;
 }
+
 .logo i {
     color: #66c0f4;
     font-size: 1.8rem;
 }
+
 .logo span {
     color: #66c0f4;
 }
+
+/* ---------- НАВИГАЦИЯ ---------- */
 .nav {
     display: flex;
     gap: 28px;
 }
+
 .nav a {
     color: #c7d5e0;
     font-weight: 600;
     text-decoration: none;
+    font-size: 1rem;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: color 0.2s;
 }
+
 .nav a:hover {
     color: #fff;
 }
+
 .nav a.active {
     color: #fff;
     border-bottom-color: #66c0f4;
 }
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+
+/* ---------- ПОИСК ---------- */
 .search {
     display: flex;
     background: #2a3a4a;
     border-radius: 4px;
     overflow: hidden;
 }
+
 .search input {
     background: transparent;
     border: none;
@@ -66,66 +108,216 @@
     color: #c7d5e0;
     width: 180px;
     outline: none;
+    font-size: 0.95rem;
 }
+
 .search input::placeholder {
     color: #6b7f8f;
 }
+
 .search button {
     background: transparent;
     border: none;
     color: #8fa8b8;
     padding: 8px 14px;
     cursor: pointer;
+    font-size: 1rem;
 }
+
 .search button:hover {
     color: #fff;
 }
-.user {
+
+
+/* ---------- КНОПКИ В ШАПКЕ ---------- */
+.auth-buttons {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #c7d5e0;
-    cursor: pointer;
+    gap: 12px;
 }
-.user i {
-    font-size: 1.6rem;
+
+.btn-profile,
+.btn-login-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #c7d5e0;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-profile:hover,
+.btn-login-header:hover {
+    color: #ffffff;
+}
+
+.btn-profile i {
+    font-size: 1.2rem;
     color: #66c0f4;
 }
-.user:hover {
-    color: #fff;
+
+.btn-login-header i {
+    font-size: 1rem;
+    color: #8fa8b8;
 }
-/* ========== ПОДВАЛ ========== */
+
+.btn-login-header:hover i {
+    color: #66c0f4;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* ---------- ПОДВАЛ ---------- */
 .footer {
     background: #0b1622;
     border-top: 2px solid #1b2838;
     padding: 30px 0;
     margin-top: auto;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
 .footer-logo {
     font-size: 1.6rem;
     font-weight: 800;
     color: #fff;
+    white-space: nowrap;
 }
+
 .footer-logo span {
     color: #66c0f4;
 }
+
 .footer-copy {
     color: #6b7f8f;
     font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
 }
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    white-space: nowrap;
+}
+
 .footer-social a {
     color: #6b7f8f;
     font-size: 1.4rem;
-    margin-left: 20px;
     transition: color 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
 }
+
 .footer-social a:hover {
     color: #66c0f4;
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 992px) {
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+    .footer-logo {
+        order: 1;
+    }
+    .footer-social {
+        order: 2;
+    }
+    .footer-copy {
+        order: 3;
+        width: 100%;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .nav {
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .header-actions {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .search input {
+        width: 120px;
+    }
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+    .footer-social a {
+        font-size: 1.2rem;
+        width: 32px;
+        height: 32px;
+    }
+    .footer-copy {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search input {
+        width: 80px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .nav {
+        gap: 12px;
+    }
+    .nav a {
+        font-size: 0.85rem;
+    }
+    .btn-profile,
+    .btn-login-header {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    .btn-profile i {
+        font-size: 1rem;
+    }
+    .btn-login-header i {
+        font-size: 0.85rem;
+    }
+    .footer-logo {
+        font-size: 1.1rem;
+    }
+    .footer-social {
+        gap: 10px;
+    }
+    .footer-social a {
+        font-size: 1rem;
+        width: 28px;
+        height: 28px;
+    }
+    .footer-copy {
+        font-size: 0.7rem;
+    }
 }
