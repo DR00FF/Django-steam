@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from products.models import Game, GameCategory, Basket
+from django.contrib.auth.decorators import login_required
 
 # Главная страница (приветственная)
 def index(request):
@@ -23,12 +24,19 @@ def about(request):
     }
     return render(request, 'products/about_us.html', context)
 
+@login_required
 def basket(request):
+    baskets = Basket.objects.filter(user=request.user)
+    total_quantity = sum(bask.quantity for bask in baskets)
+    total_sum = sum(bask.product.price for bask in baskets)
+
     context = {
-        "basket": Basket.objects.filter(user=request.user)
+        "baskets": baskets,
+        "total_quantity": total_quantity,
+        "total_sum": total_sum
     }
     return render(request, "products/basket.html", context)
-
+@login_required
 def basket_add(request, product_id):
     game = Game.object.get(id=product_id)
     baskets = Basket.object.filter(user=request.user, product=game)
@@ -40,7 +48,7 @@ def basket_add(request, product_id):
         basket.quantity +=1
         basket.save()
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
-
+@login_required
 def basket_delete(request, basket_id):
     basket = Basket.objects.get(id=basket_id)
     basket.delete()

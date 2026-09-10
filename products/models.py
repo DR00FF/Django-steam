@@ -31,3 +31,4 @@ class Basket(models.Model):
 
     def __str__(self):
         return f"Корзина для {self.user.username} | Игра - {self.product.name}"
+

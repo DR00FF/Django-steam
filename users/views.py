@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from users.forms import UserLoginForm, UserRegisterForm, UserProfileForm
 from django.contrib import auth
 from django.urls import reverse
-
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -47,7 +47,7 @@ def register(request):
     return render(request, 'users/register.html', context)
 
 
-
+@login_required
 def profile(request):
    form = UserProfileForm(instance=request.user)
    context = {
