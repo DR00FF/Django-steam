@@ -1,0 +1,54 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}Редактирование профиля — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-page">
+
+    <div class="profile-header-bg">
+        <div class="profile-glow-bg"></div>
+    </div>
+
+    <div class="edit-page-wrapper">
+
+        <h1 class="edit-page-title">Редактировать профиль</h1>
+
+        <form action="{% url 'users:profile_edit' %}" method="POST" enctype="multipart/form-data" class="edit-form">
+            {% csrf_token %}
+
+            <!-- Юзернейм -->
+            <div class="form-group">
+                <label for="inputUsername">Юзернейм</label>
+                <input class="form-control" id="inputUsername" type="text" name="username" value="{{ user.username }}" placeholder="Введите юзернейм" required>
+            </div>
+
+            <!-- Почта -->
+            <div class="form-group">
+                <label for="inputEmail">Почта</label>
+                <input class="form-control" id="inputEmail" type="email" name="email" value="{{ user.email }}" placeholder="Введите почту" required>
+            </div>
+
+            <!-- Аватар -->
+            <div class="form-group">
+                <label for="userAvatar">Аватар</label>
+                <input class="form-control" id="userAvatar" type="file" name="image" accept="image/*">
+                <small class="form-hint">Если не выбирать файл — аватар останется прежним.</small>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="edit-form-actions">
+                <a href="{% url 'users:profile' %}" class="btn-cancel">Отмена</a>
+                <button type="submit" class="btn-save">Сохранить</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

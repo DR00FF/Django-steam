@@ -35,14 +35,27 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: default;
+    display: flex;
+    flex-direction: column;
     will-change: transform;
 }
 
 .game-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
-    background: #2a3a4a;
+}
+
+/* Ссылка-обёртка (картинка + инфа) */
+.game-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+}
+
+/* Блок с кнопкой */
+.game-card-actions {
+    padding: 0 18px 20px;
 }
 
 .game-image {
@@ -216,3 +229,28 @@
         font-size: 0.95rem;
     }
 }
+
+.btn-add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 18px;
+    width: 100%;
+    background: linear-gradient(135deg, #7b5cff, #b06aff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+.btn-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123, 92, 255, 0.45);
+    color: #fff;
+}
+
+

@@ -51,5 +51,5 @@ class UserProfileForm(UserChangeForm):
     }))
     class Meta:
         model = User
-        fields = ['username',]
+        fields = ['username','image','email']
 

@@ -1,0 +1,76 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}{{ game.name }} — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/game_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="game-detail-page">
+
+    <!-- ========== БОЛЬШОЙ БАННЕР ========== -->
+    <div class="game-banner">
+        {% if game.image %}
+            <img src="{{ game.image.url }}" alt="{{ game.name }}">
+        {% else %}
+            <div class="game-banner-placeholder">
+                <i class="fas fa-dragon"></i>
+            </div>
+        {% endif %}
+        <div class="game-banner-overlay"></div>
+    </div>
+
+    <div class="container">
+
+        <!-- ========== НАЗВАНИЕ + ЖАНР + РЕЙТИНГ ========== -->
+        <div class="game-header">
+            <div class="game-header-left">
+                <h1 class="game-title">{{ game.name }}</h1>
+                <div class="game-tags">
+                    {% if game.genre %}
+                        <span class="tag">{{ game.genre }}</span>
+                    {% endif %}
+                    {% if game.category %}
+                        <span class="tag">{{ game.category.name }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="game-header-right">
+                <div class="game-rating">
+                    <i class="fas fa-star"></i>
+                    <span>{{ game.rating }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== ДВЕ КОЛОНКИ: ОПИСАНИЕ + ПОКУПКА ========== -->
+        <div class="game-body">
+
+            <!-- Описание -->
+            <div class="game-description-block">
+                <h2 class="section-title">Об игре</h2>
+                <p class="game-description">
+                    {{ game.description|default:"Описание пока не добавлено. Скоро здесь появится подробная информация об этой игре." }}
+                </p>
+            </div>
+
+            <!-- Блок покупки -->
+            <aside class="game-buy-block">
+                <div class="game-price-label">Цена</div>
+                <div class="game-price">{{ game.price }} ₽</div>
+
+                <a href="{% url 'products:basket_add' game.id %}" class="btn-buy">
+                    <i class="fas fa-cart-plus"></i>
+                    В корзину
+                </a>
+            </aside>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

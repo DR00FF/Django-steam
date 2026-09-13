@@ -1,242 +1,206 @@
-/* ============================================================
-   basket.css — СТИЛЬ ДЛЯ КОРЗИНЫ
-   ============================================================ */
-
-.basket-page {
-    padding: 40px 0 60px;
-    background: #0b1622;
-    min-height: 70vh;
+/* ================= ОБЁРТКА ================= */
+.cart-page {
+    padding: 40px 0 80px;
+    min-height: 60vh;
+}
+.cart-page .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.basket-title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #ffffff;
+.cart-title {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* ================= ТАБЛИЦА КОРЗИНЫ ================= */
+.cart-table-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    overflow: hidden;
     margin-bottom: 30px;
 }
 
-/* ---------- ТАБЛИЦА ---------- */
-.basket-table-wrapper {
-    overflow-x: auto;
-}
-
-.basket-table {
+.cart-table {
     width: 100%;
     border-collapse: collapse;
-    background: #1b2838;
-    border-radius: 16px;
-    overflow: hidden;
+    table-layout: fixed;
 }
 
-.basket-table thead {
-    background: #2a3a4a;
-}
+/* Ширины колонок: Игра — 70%, Цена — 20%, Удалить — 10% */
+.cart-table th:nth-child(1),
+.cart-table td:nth-child(1) { width: 70%; text-align: left; }
 
-.basket-table th {
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) { width: 20%; text-align: left; }
+
+.cart-table th:nth-child(3),
+.cart-table td:nth-child(3) { width: 10%; text-align: right; }
+
+/* Заголовки */
+.cart-table thead th {
     padding: 16px 20px;
-    text-align: left;
-    color: #8fa8b8;
+    background: rgba(255, 255, 255, 0.05);
+    color: #bbb;
+    font-size: 13px;
     font-weight: 600;
-    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.basket-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #2a3a4a;
-    color: #c7d5e0;
+/* Строки */
+.cart-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.2s;
 }
-
-.basket-table tr:last-child td {
+.cart-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+.cart-table tbody tr:last-child {
     border-bottom: none;
 }
 
-.basket-table tr:hover {
-    background: #243545;
+.cart-table td {
+    padding: 16px 20px;
+    color: #ddd;
+    font-size: 15px;
+    vertical-align: middle;
 }
 
-/* ----- Информация об игре ----- */
-.basket-game-info {
+/* ================= ИГРА (картинка + название) ================= */
+.cart-game-info {
     display: flex;
     align-items: center;
     gap: 14px;
 }
 
-.basket-game-icon {
-    width: 48px;
-    height: 48px;
+.cart-game-icon {
+    width: 190px;
+    height: 70px;
     border-radius: 8px;
-    background: #2a3a4a;
+    background: #1a1a2e;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
-    color: #66c0f4;
+    overflow: hidden;
     flex-shrink: 0;
 }
 
-.basket-game-name {
-    font-weight: 600;
-    color: #ffffff;
+.cart-game-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-/* ----- Количество ----- */
-.basket-quantity {
-    display: flex;
+.cart-game-icon i {
+    font-size: 24px;
+    color: #7b5cff;
+}
+
+.cart-game-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* ================= ЦЕНА ================= */
+.cart-price {
+    color: #ccc;
+    font-size: 15px;
+}
+
+/* ================= УДАЛИТЬ ================= */
+.cart-remove {
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 80, 80, 0.1);
+    color: #ff6b6b;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.cart-remove:hover {
+    background: #ff6b6b;
+    color: #fff;
+    transform: scale(1.05);
 }
 
-.basket-qty-number {
-    font-weight: 600;
-    font-size: 1rem;
-    min-width: 24px;
-    text-align: center;
-    color: #ffffff;
-}
-
-/* ----- Цены ----- */
-.basket-price {
-    color: #c7d5e0;
-    font-weight: 500;
-}
-
-.basket-total-price {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-/* ----- Удалить ----- */
-.basket-remove {
-    background: transparent;
-    border: none;
-    color: #6b7f8f;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.2s;
-    padding: 4px 8px;
-}
-
-.basket-remove:hover {
-    color: #e84a4a;
-}
-
-/* ---------- ИТОГО ---------- */
-.basket-summary {
+/* ================= ИТОГИ ================= */
+.cart-summary {
     max-width: 400px;
     margin-left: auto;
-    margin-top: 30px;
-    background: #1b2838;
-    border-radius: 16px;
-    padding: 30px 40px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
 }
 
-.basket-summary-row {
+.cart-summary-row {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    color: #c7d5e0;
-    font-size: 1rem;
+    color: #bbb;
+    font-size: 15px;
+    margin-bottom: 12px;
 }
 
-.basket-summary-row:last-of-type {
-    border-top: 1px solid #2a3a4a;
-    margin-top: 8px;
-    padding-top: 16px;
-}
-
-.basket-grand-total {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #66c0f4;
-}
-
-.basket-btn-checkout {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #66c0f4, #4a8db7);
-    border: none;
-    border-radius: 8px;
-    color: #171d25;
+.cart-grand-total {
+    color: #fff;
+    font-size: 22px;
     font-weight: 700;
-    font-size: 1.1rem;
+}
+
+.btn-checkout {
+    display: block;
     text-align: center;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #7b5cff, #b06aff);
+    color: #fff;
     text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
 }
-
-.basket-btn-checkout:hover {
+.btn-checkout:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(102, 192, 244, 0.3);
+    box-shadow: 0 10px 25px rgba(123, 92, 255, 0.5);
+    color: #fff;
 }
 
-/* ---------- АДАПТИВ ---------- */
-@media (max-width: 768px) {
-    .basket-title {
-        font-size: 2rem;
-    }
-
-    .basket-table th,
-    .basket-table td {
-        padding: 12px 14px;
-        font-size: 0.9rem;
-    }
-
-    .basket-game-name {
-        font-size: 0.9rem;
-    }
-
-    .basket-game-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    .basket-summary {
-        padding: 24px 20px;
-        max-width: 100%;
-    }
-
-    .basket-grand-total {
-        font-size: 1.2rem;
-    }
+/* ================= ПУСТАЯ КОРЗИНА ================= */
+.cart-page h4 {
+    text-align: center;
+    color: #888;
+    font-size: 20px;
+    padding: 60px 0;
 }
 
-@media (max-width: 480px) {
-    .basket-title {
-        font-size: 1.6rem;
+/* ================= АДАПТИВ ================= */
+@media (max-width: 800px) {
+    .cart-table thead {
+        display: none;
     }
-
-    .basket-table th,
-    .basket-table td {
-        padding: 10px 10px;
-        font-size: 0.8rem;
-    }
-
-    .basket-table td:last-child {
-        padding-right: 6px;
-    }
-
-    .basket-game-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
-    }
-
-    .basket-game-name {
-        font-size: 0.8rem;
-    }
-
-    .basket-summary {
-        padding: 20px 16px;
-    }
-
-    .basket-btn-checkout {
-        font-size: 1rem;
+    .cart-table tbody tr {
+        display: flex;
+        flex-direction: column;
         padding: 12px;
+        gap: 8px;
+    }
+    .cart-table td {
+        padding: 4px 0;
+        width: 100% !important;
+        text-align: left !important;
+    }
+    .cart-game-info {
+        margin-bottom: 8px;
     }
 }

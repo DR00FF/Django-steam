@@ -49,7 +49,17 @@ def register(request):
 
 @login_required
 def profile(request):
-   form = UserProfileForm(instance=request.user)
+   if request.method == 'POST':
+       form = UserProfileForm(data=request.POST, instance=request.user, files=request.FILES)
+       if form.is_valid():
+           form.save()
+           return HttpResponseRedirect(reverse('users:profile'))
+       else:
+           print(form.errors)
+
+   else:
+       form = UserProfileForm(data=request.POST)
+
    context = {
        "form": form
    }
@@ -58,3 +68,25 @@ def profile(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def profile_edit_view(request):
+    """Страница редактирования профиля."""
+    if request.method == 'POST':
+        user = request.user
+        new_username = request.POST.get('username')
+        new_email = request.POST.get('email')
+        new_image = request.FILES.get('image')
+
+        if new_username:
+            user.username = new_username
+        if new_email:
+            user.email = new_email
+        if new_image:
+            user.image = new_image
+
+        user.save()
+        return HttpResponseRedirect(reverse('users:profile'))
+
+    return render(request, 'users/profile_edit.html')

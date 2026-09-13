@@ -45,7 +45,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
 }
 
 /* ---------- ЛОГОТИП ---------- */
@@ -106,7 +106,7 @@ body {
     border: none;
     padding: 8px 16px;
     color: #c7d5e0;
-    width: 180px;
+    width: 120px;
     outline: none;
     font-size: 0.95rem;
 }
@@ -321,3 +321,20 @@ body {
         font-size: 0.7rem;
     }
 }
+
+.nav-cart {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #c7d5e0;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+.nav-cart:hover {
+    color: #fff;
+}
+
