@@ -175,7 +175,39 @@
     box-shadow: 0 10px 25px rgba(123, 92, 255, 0.5);
     color: #fff;
 }
+/* ========== КНОПКА "ОФОРМИТЬ ЗАКАЗ" ========== */
+.basket-actions {
+    display: block;
+    margin-top: 20px;
+}
 
+.btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #7b5cff, #b06aff);
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(123, 92, 255, 0.5);
+    color: #ffffff;
+}
+
+.btn-buy i {
+    font-size: 1.1rem;
+}
 /* ================= ПУСТАЯ КОРЗИНА ================= */
 .cart-page h4 {
     text-align: center;

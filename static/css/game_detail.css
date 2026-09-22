@@ -216,3 +216,44 @@
         font-size: 26px;
     }
 }
+
+/* ========== КНОПКА «УЖЕ В КОРЗИНЕ» ========== */
+.btn-in-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 24px;
+    background: #4a5568;
+    color: #8fa8b8;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+/* ========== КНОПКА «В КОРЗИНУ» ========== */
+.btn-add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #7b5cff, #b06aff);
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123, 92, 255, 0.45);
+    color: #ffffff;
+}

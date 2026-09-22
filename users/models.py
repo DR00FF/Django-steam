@@ -3,3 +3,4 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     image = models.ImageField(upload_to="users_media", blank=True)
+    banner = models.ImageField(upload_to="users_banner", blank=True)

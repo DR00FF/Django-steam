@@ -40,6 +40,12 @@
                 <small class="form-hint">Если не выбирать файл — аватар останется прежним.</small>
             </div>
 
+            <div class="form-group">
+                <label for="id_banner">Шапка профиля (мин. 2048×1152)</label>
+                <input class="form-control" id="id_banner" type="file" name="banner" accept="image/*">
+                <small class="form-hint">Если не выбирать файл — шапка останется прежней.</small>
+            </div>
+
             <!-- Кнопки -->
             <div class="edit-form-actions">
                 <a href="{% url 'users:profile' %}" class="btn-cancel">Отмена</a>

@@ -1,0 +1,49 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}Моя библиотека — GameStore{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="library-page">
+    <div class="container">
+
+        <h1 class="library-title">Моя библиотека</h1>
+
+        {% if games %}
+            <div class="library-grid">
+                {% for item in games %}
+                    <div class="library-card">
+                        <div class="library-card-image">
+                            {% if item.game.image %}
+                                <img src="{{ item.game.image.url }}" alt="{{ item.game.name }}">
+                            {% else %}
+                                <i class="fas fa-gamepad"></i>
+                            {% endif %}
+                        </div>
+                        <div class="library-card-info">
+                            <h3>{{ item.game.name }}</h3>
+                            <p class="library-card-date">
+                                Куплено: {{ item.purchased_at|date:"d.m.Y" }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="library-empty">
+                <i class="fas fa-gamepad"></i>
+                <h2>Библиотека пуста</h2>
+                <p>Купите игру, чтобы она появилась здесь.</p>
+                <a href="{% url 'products:catalog' %}" class="btn-catalog">
+                    Перейти в каталог
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

@@ -254,3 +254,187 @@
 }
 
 
+
+/* ---------- ДЕЙСТВИЯ КНОПКИ УЖЕ В КОРЗИНЕ В КАРТОЧКЕ ---------- */
+.game-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Кнопка "Уже в корзине" */
+.btn-in-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    padding: 10px 16px;
+    background: #4a5568;
+    color: #8fa8b8;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: not-allowed;
+}
+
+
+
+/* ========== ПАГИНАЦИЯ ========== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 20px;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 12px;
+    background: #1b2838;
+    color: #c7d5e0;
+    border: 1px solid #2a3a4a;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.page-link:hover {
+    background: #2a3a4a;
+    color: #ffffff;
+    border-color: #66c0f4;
+}
+
+.page-item.active .page-link {
+    background: #66c0f4;
+    color: #171d25;
+    border-color: #66c0f4;
+}
+
+.page-item.disabled .page-link {
+    background: #1b2838;
+    color: #4a5568;
+    border-color: #2a3a4a;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+
+
+/* ---------- ЗАГОЛОВОК КАТАЛОГА + ФИЛЬТР ---------- */
+.catalog-header {
+    padding: 40px 0 30px;
+    border-bottom: 2px solid #2a3a4a;
+}
+
+.catalog-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.catalog-header-left h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+.catalog-subtitle {
+    color: #8fa8b8;
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+/* ---------- ФИЛЬТР ПО КАТЕГОРИЯМ ---------- */
+.categories-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #1b2838;
+    color: #c7d5e0;
+    border: 1px solid #2a3a4a;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background: #2a3a4a;
+    color: #ffffff;
+    border-color: #66c0f4;
+}
+
+.category-btn.active {
+    background: #66c0f4;
+    color: #171d25;
+    border-color: #66c0f4;
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 768px) {
+    .catalog-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .catalog-header-left h1 {
+        font-size: 2rem;
+    }
+
+    .category-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ========== КНОПКА "УЖЕ В БИБЛИОТЕКЕ" ========== */
+.btn-in-library {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    padding: 10px 16px;
+    background: #2a3a4a;
+    color: #66c0f4;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #66c0f4;
+    transition: 0.2s;
+}
+
+.btn-in-library i {
+    color: #66c0f4;
+    font-size: 1rem;
+}
+
+.btn-in-library:hover {
+    background: #30404f;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(102, 192, 244, 0.25);
+}

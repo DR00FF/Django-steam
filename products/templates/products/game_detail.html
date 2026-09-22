@@ -61,11 +61,21 @@
             <aside class="game-buy-block">
                 <div class="game-price-label">Цена</div>
                 <div class="game-price">{{ game.price }} ₽</div>
-
-                <a href="{% url 'products:basket_add' game.id %}" class="btn-buy">
-                    <i class="fas fa-cart-plus"></i>
-                    В корзину
-                </a>
+            {% if user.is_authenticated %}
+            {% if game not in basket %}
+                <div class="game-card-actions">
+                    <a href="{% url 'products:basket_add' game.id %}" class="btn-add-to-cart">
+                        <i class="fas fa-cart-plus"></i> В корзину
+                    </a>
+                </div>
+            {% else %}
+                <div class="game-card-actions">
+                    <span class="btn-in-cart">
+                        <i class="fas fa-check"></i> Уже в корзине
+                    </span>
+                </div>
+            {% endif %}
+            {% endif %}
             </aside>
 
         </div>

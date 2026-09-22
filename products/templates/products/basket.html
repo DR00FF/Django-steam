@@ -59,7 +59,9 @@
                     <span>Общая сумма:</span>
                     <span class="cart-grand-total">{{ total_sum }}</span>
                 </div>
-                <a href="#" class="btn-checkout">Оформить заказ</a>
+                <a href="{% url 'products:buy_games' %}" class="btn-buy">
+                    <i class="fas fa-credit-card"></i> Оформить заказ
+                </a>
             </div>
 
         {% else %}

@@ -11,7 +11,11 @@
 <div class="profile-page">
 
     <div class="profile-header-bg">
+    {% if user.banner %}
+        <img src="{{ user.banner.url }}" alt="Шапка профиля" class="profile-banner-img">
+    {% else %}
         <div class="profile-glow-bg"></div>
+    {% endif %}
     </div>
 
     <div class="profile-header-simple">
@@ -35,7 +39,7 @@
 
     <!-- Статистика -->
     <div class="stats-container">
-        <div class="stat-card"><span class="stat-number">0</span><span class="stat-label">Игр в библиотеке</span></div>
+        <div class="stat-card"><span class="stat-number">{{ total_quantity }}</span><span class="stat-label">Игр в библиотеке</span></div>
         <div class="stat-card"><span class="stat-number">0</span><span class="stat-label">Часов в играх</span></div>
         <div class="stat-card"><span class="stat-number">0</span><span class="stat-label">Достижений</span></div>
     </div>

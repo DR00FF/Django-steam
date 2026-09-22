@@ -45,11 +45,14 @@ class UserProfileForm(UserChangeForm):
         'class': 'form-control'
     }))
     image = forms.ImageField(widget=forms.FileInput(attrs={"class": ""}))
+    banner = forms.ImageField(widget=forms.FileInput(attrs={"class": "form-control"}),required=False,label="Шапка профиля (2048×1152)")
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'class': 'form-control',
         "readonly": True
     }))
+
+
     class Meta:
         model = User
-        fields = ['username','image','email']
+        fields = ['username','image','email', 'banner']
 

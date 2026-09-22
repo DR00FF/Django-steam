@@ -3,6 +3,7 @@ from users.forms import UserLoginForm, UserRegisterForm, UserProfileForm
 from django.contrib import auth
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from products.models import Library
 
 
 
@@ -25,7 +26,7 @@ def login(request):
         form = UserLoginForm()
 
     context = {
-
+        "title": "Login | Game Store",
         "form": form
     }
     return render(request, 'users/login.html', context)
@@ -42,6 +43,7 @@ def register(request):
         form = UserRegisterForm()
 
     context = {
+        "title": "Register | Game Store",
         "form": form
     }
     return render(request, 'users/register.html', context)
@@ -49,6 +51,7 @@ def register(request):
 
 @login_required
 def profile(request):
+   total_quantity = sum(1 for game in Library.objects.filter(user=request.user))
    if request.method == 'POST':
        form = UserProfileForm(data=request.POST, instance=request.user, files=request.FILES)
        if form.is_valid():
@@ -61,7 +64,9 @@ def profile(request):
        form = UserProfileForm(data=request.POST)
 
    context = {
-       "form": form
+       "title": "Profile | Game Store",
+       "form": form,
+       "total_quantity": total_quantity
    }
    return render(request, 'users/profile.html', context)
 
@@ -78,6 +83,7 @@ def profile_edit_view(request):
         new_username = request.POST.get('username')
         new_email = request.POST.get('email')
         new_image = request.FILES.get('image')
+        new_banner = request.FILES.get('banner')
 
         if new_username:
             user.username = new_username
@@ -85,8 +91,12 @@ def profile_edit_view(request):
             user.email = new_email
         if new_image:
             user.image = new_image
+        if new_banner:
+            user.banner = new_banner
 
         user.save()
         return HttpResponseRedirect(reverse('users:profile'))
-
-    return render(request, 'users/profile_edit.html')
+    context = {
+        "title": "RedactProfile | Game Store",
+    }
+    return render(request, 'users/profile_edit.html', context)

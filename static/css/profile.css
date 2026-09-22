@@ -308,18 +308,17 @@
     z-index: 10;
     flex-wrap: wrap;
 }
+
 /* ============================================================
    КРУГЛЫЙ АВАТАР
    ============================================================ */
 
 .profile-header-simple .img-thumbnail {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     padding: 0;
-    border: #0b1622;
-    background: ;
     box-shadow: 0 0 40px rgba(102, 192, 244, 0.25);
     display: block;
     margin: 0 auto;
@@ -338,8 +337,6 @@
         height: 80px;
     }
 }
-
-
 
 /* Кнопка "Изменить профиль" */
 .btn-edit-profile {
@@ -452,4 +449,12 @@
 .btn-cancel:hover {
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
+}
+
+/* ========== БАННЕР ПРОФИЛЯ ========== */
+.profile-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
